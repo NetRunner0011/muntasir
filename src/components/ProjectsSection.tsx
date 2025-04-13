@@ -8,7 +8,10 @@ const ProjectsSection = () => {
   const project = {
     title: "Navigation Aid for Visually Impaired",
     description: "A helping stick and glasses designed to help blind people navigate obstacles in crowded areas. Presented at Rajshahi College National Science Fest.",
-    image: "/placeholder.svg",
+    images: [
+      "/lovable-uploads/6955a290-1a06-40c2-8599-9bd484f9ad84.png",
+      "/lovable-uploads/b7690784-ab2a-4cc9-8c8e-403a13f3f06f.png"
+    ],
     tags: ["Arduino", "Sensors", "Assistive Tech"],
     detailsLink: "https://www.facebook.com/100037226646783/posts/pfbid02ZAXQ14jJbhoii68QgP8KzuHbZ93JLC7azvze9kRYqbg6wf3KYqkFYraWV721gfQhl/?app=fbl"
   };
@@ -21,11 +24,16 @@ const ProjectsSection = () => {
         <div className="max-w-md mx-auto">
           <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
             <div className="h-48 bg-tech-blue/20 flex items-center justify-center">
-              <img 
-                src={project.image} 
-                alt={project.title} 
-                className="w-full h-full object-cover"
-              />
+              <div className="flex space-x-2">
+                {project.images.map((image, index) => (
+                  <img 
+                    key={index}
+                    src={image} 
+                    alt={`${project.title} - Image ${index + 1}`} 
+                    className="w-1/2 h-full object-cover"
+                  />
+                ))}
+              </div>
             </div>
             <CardHeader>
               <CardTitle>{project.title}</CardTitle>
