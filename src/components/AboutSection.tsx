@@ -9,19 +9,38 @@ const AboutSection = () => {
         <h2 className="section-title">About Me</h2>
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-          <div>
-            <p className="text-lg mb-6">
-              I am Meskat-UL Muntasir, a 12th class student at Rajshahi College in Bangladesh with a 
-              <span className="highlight"> deep passion for engineering</span>, particularly circuit automation.
+          <div className="text-lg space-y-6">
+            <p>
+              Hello! My name is Meskat Ul Muntasir. I am currently an intermidiate student at <a 
+                href="https://www.facebook.com/RajshahiCollegeOfficial" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-tech-blue hover:underline"
+              >
+                Rajshahi College
+              </a>, Bangladesh, where I've been actively involved in academic and extracurricular activities, including projects at the <a 
+                href="https://www.facebook.com/rajshahicollegescienceclub" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-tech-blue hover:underline"
+              >
+                Rajshahi College Science Club
+              </a>.
             </p>
-            <p className="text-lg mb-6">
-              My journey in technology began in primary school when I started working with microcontrollers. Since then, 
-              I have continued to expand my knowledge and skills in this field, developing various projects including 
-              assistive devices for visually impaired people.
+            
+            <p>
+              Before Rajshahi College, I passed SSC from <a 
+                href="https://www.facebook.com/rcs1828" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-tech-blue hover:underline"
+              >
+                Rajshahi Collegiate School and College
+              </a>.
             </p>
-            <p className="text-lg">
-              I am constantly seeking to learn and grow in my field, with the goal of making meaningful contributions 
-              to society through innovative engineering solutions.
+            
+            <p>
+              Outside academics, I keep a low profile. I study quietly, build things when I can, and enjoy thinking deeply about how the world works—both in formulas and in silence. Besides, I strengthen my brain mussels by reading books and chill playing video games.
             </p>
           </div>
           
@@ -37,7 +56,7 @@ const AboutSection = () => {
                     <div>
                       <h4 className="font-semibold text-lg">Rajshahi College</h4>
                       <p className="text-muted-foreground">Higher Secondary Education (Current)</p>
-                      <p>12th Class Student</p>
+                      <p>Intermediate Student</p>
                     </div>
                   </div>
                 </CardContent>

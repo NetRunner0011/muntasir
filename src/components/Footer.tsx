@@ -1,5 +1,5 @@
 
-import { Github, Linkedin, Twitter, Instagram, Heart } from 'lucide-react';
+import { Facebook, Linkedin, Twitter, Instagram, Heart } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -10,21 +10,17 @@ const Footer = () => {
         <div className="flex flex-col md:flex-row justify-between items-center">
           <div className="mb-6 md:mb-0">
             <h3 className="text-xl font-bold">Meskat-UL Muntasir</h3>
-            <p className="mt-2 text-gray-300">Circuit Automation Enthusiast</p>
+            <p className="mt-2 text-gray-300">Student at Rajshahi College</p>
           </div>
           
           <div className="flex space-x-4">
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-tech-blue/80 transition-colors duration-300">
-              <Github size={20} />
-            </a>
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-tech-blue/80 transition-colors duration-300">
-              <Linkedin size={20} />
-            </a>
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-tech-blue/80 transition-colors duration-300">
-              <Twitter size={20} />
-            </a>
-            <a href="#" className="bg-white/10 p-2 rounded-full hover:bg-tech-blue/80 transition-colors duration-300">
-              <Instagram size={20} />
+            <a 
+              href="https://www.facebook.com/meskatulmuntasir" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="bg-white/10 p-2 rounded-full hover:bg-tech-blue/80 transition-colors duration-300"
+            >
+              <Facebook size={20} />
             </a>
           </div>
         </div>

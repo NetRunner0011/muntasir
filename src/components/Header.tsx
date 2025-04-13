@@ -1,7 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
-import { Button } from './ui/button';
+import { Menu, X, Facebook } from 'lucide-react';
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -29,9 +28,7 @@ const Header = () => {
   const navLinks = [
     { name: 'Home', href: '#home' },
     { name: 'About', href: '#about' },
-    { name: 'Projects', href: '#projects' },
-    { name: 'Skills', href: '#skills' },
-    { name: 'Contact', href: '#contact' },
+    { name: 'ECA', href: '#projects' },
   ];
 
   return (
@@ -42,8 +39,8 @@ const Header = () => {
         </a>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:block">
-          <ul className="flex items-center gap-8">
+        <nav className="hidden md:flex items-center">
+          <ul className="flex items-center gap-8 mr-4">
             {navLinks.map((link) => (
               <li key={link.name}>
                 <a 
@@ -55,6 +52,14 @@ const Header = () => {
               </li>
             ))}
           </ul>
+          <a 
+            href="https://www.facebook.com/meskatulmuntasir" 
+            target="_blank"
+            rel="noopener noreferrer" 
+            className="flex items-center gap-2 bg-tech-blue/10 p-2 rounded-full text-tech-blue hover:bg-tech-blue/20 transition-colors"
+          >
+            <Facebook size={20} />
+          </a>
         </nav>
 
         {/* Mobile Menu Button */}
@@ -79,6 +84,18 @@ const Header = () => {
                   </a>
                 </li>
               ))}
+              <li>
+                <a 
+                  href="https://www.facebook.com/meskatulmuntasir" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-2 py-2 text-tech-blue"
+                  onClick={toggleMenu}
+                >
+                  <Facebook size={20} />
+                  <span>Facebook</span>
+                </a>
+              </li>
             </ul>
           </nav>
         </div>
