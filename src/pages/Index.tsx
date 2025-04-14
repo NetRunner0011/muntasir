@@ -3,7 +3,7 @@ import Header from "@/components/Header";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProjectsSection from "@/components/ProjectsSection";
-import ContactSection from "@/components/ContactSection";
+// Removing ContactSection import
 import Footer from "@/components/Footer";
 import { useEffect, useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -31,7 +31,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ProjectsSection />
-      <ContactSection />
+      {/* Removing ContactSection */}
       <Footer />
       
       {/* Sticky FAB Button */}
