@@ -35,15 +35,15 @@ const ProjectsSection = () => {
                 ))}
               </div>
             </div>
-            <CardHeader>
-              <CardTitle>{project.title}</CardTitle>
+            <CardHeader className="pb-2">
+              <CardTitle className="text-xl">{project.title}</CardTitle>
               <div className="flex flex-wrap gap-2 mt-2">
                 {project.tags.map((tag, tagIndex) => (
                   <Badge key={tagIndex} variant="secondary">{tag}</Badge>
                 ))}
               </div>
             </CardHeader>
-            <CardContent>
+            <CardContent className="pt-2">
               <CardDescription className="text-base">{project.description}</CardDescription>
             </CardContent>
             <CardFooter className="flex gap-4">
