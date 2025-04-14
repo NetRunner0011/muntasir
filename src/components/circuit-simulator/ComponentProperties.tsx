@@ -3,6 +3,15 @@ import React, { useEffect, useState } from 'react';
 import { X } from 'lucide-react';
 import useCircuitStore from '@/store/useCircuitStore';
 
+interface PropertyState {
+  value: number;
+  label: string;
+  unit: string;
+  voltage?: number;
+  current?: number;
+  power?: number;
+}
+
 const ComponentProperties = () => {
   const {
     components,
@@ -12,13 +21,18 @@ const ComponentProperties = () => {
     removeElement
   } = useCircuitStore();
   
-  const [properties, setProperties] = useState({ value: 0, label: '', unit: '' });
+  const [properties, setProperties] = useState<PropertyState>({ value: 0, label: '', unit: '' });
   
   const selectedComponent = components.find(component => component.id === selectedElement);
   
   useEffect(() => {
     if (selectedComponent) {
-      setProperties(selectedComponent.data);
+      // Ensure label and unit are always strings even if they might be undefined in the component data
+      setProperties({
+        ...selectedComponent.data,
+        label: selectedComponent.data.label || '',
+        unit: selectedComponent.data.unit || ''
+      });
     }
   }, [selectedComponent]);
   
