@@ -34,13 +34,13 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-8 items-center">
         <div className="max-w-3xl">
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-tech-dark to-tech-blue bg-clip-text text-transparent"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
             custom={0}
           >
-            Hi, I'm <span className="text-tech-blue block sm:inline">Meskat-UL Muntasir</span>
+            Hi, I'm <span className="block sm:inline">Meskat-UL Muntasir</span>
           </motion.h1>
           
           <motion.div
