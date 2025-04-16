@@ -84,7 +84,7 @@ const AnimatedCursor = () => {
           damping: 28
         }}
       />
-      <style jsx global>{`
+      <style>{`
         body:not(.no-custom-cursor) {
           cursor: none;
         }

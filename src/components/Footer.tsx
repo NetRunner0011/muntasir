@@ -20,7 +20,7 @@ const Footer = () => {
   }, []);
   
   return (
-    <footer className="bg-tech-dark text-white py-12">
+    <footer className="bg-tech-dark text-white py-12 dark:bg-black/80">
       <div className="container mx-auto px-4">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div 
@@ -63,7 +63,7 @@ const Footer = () => {
         >
           <p>© {currentYear} Meskat-UL Muntasir. All rights reserved.</p>
           <p className="mt-2 flex items-center justify-center gap-1">
-            Made with <Heart size={14} className="text-red-500 fill-current" /> in Bangladesh
+            Made with <Heart size={14} className="text-red-500 fill-current" /> by Muntasir
           </p>
           
           <div className="mt-6 space-y-3">
