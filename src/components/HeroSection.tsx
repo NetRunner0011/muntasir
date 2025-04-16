@@ -2,6 +2,7 @@
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { Typewriter } from 'react-simple-typewriter';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -29,26 +30,39 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center bg-circuit-pattern bg-tech-light">
-      <div className="absolute inset-0 bg-gradient-to-r from-tech-light/90 to-tech-light/70"></div>
+    <section id="home" className="relative min-h-screen flex items-center bg-circuit-pattern bg-tech-light dark:bg-tech-dark dark:bg-opacity-90">
+      <div className="absolute inset-0 bg-gradient-to-r from-tech-light/90 to-tech-light/70 dark:from-tech-dark/90 dark:to-tech-dark/70"></div>
       <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-8 items-center">
         <div className="max-w-3xl">
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-tech-dark to-tech-blue bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-tech-dark to-tech-blue dark:from-tech-light dark:to-tech-blue bg-clip-text text-transparent"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
             custom={0}
+            data-aos="fade-right"
           >
-            Hi, I'm <span className="block sm:inline">Meskat-UL Muntasir</span>
+            Hi, I'm <span className="block sm:inline">
+              <Typewriter
+                words={['Meskat-UL Muntasir', 'a Dreamer', 'a Tinkerer', 'a Student']}
+                loop={true}
+                cursor
+                cursorStyle="|"
+                typeSpeed={70}
+                deleteSpeed={50}
+                delaySpeed={1000}
+              />
+            </span>
           </motion.h1>
           
           <motion.div
-            className="text-xl md:text-2xl text-tech-dark mb-8"
+            className="text-xl md:text-2xl text-tech-dark dark:text-tech-light mb-8"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
             custom={1}
+            data-aos="fade-right"
+            data-aos-delay="200"
           >
             <p>Studying science at Rajshahi College</p>
           </motion.div>
@@ -58,6 +72,8 @@ const HeroSection = () => {
             animate="visible"
             variants={fadeInUpVariants}
             custom={2}
+            data-aos="fade-up"
+            data-aos-delay="400"
           >
             <motion.a 
               href="https://www.facebook.com/meskatulmuntasir" 
@@ -78,9 +94,11 @@ const HeroSection = () => {
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.6, type: "spring", stiffness: 100 }}
+          data-aos="zoom-in"
+          data-aos-delay="300"
         >
           <motion.div 
-            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-tech-blue shadow-xl"
+            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-tech-blue dark:border-tech-blue/80 shadow-xl"
             animate={{ 
               y: [0, -10, 0],
               boxShadow: [
@@ -114,7 +132,7 @@ const HeroSection = () => {
       >
         <motion.a 
           href="#about" 
-          className="flex flex-col items-center text-tech-dark hover:text-tech-blue transition-colors duration-300"
+          className="flex flex-col items-center text-tech-dark dark:text-tech-light hover:text-tech-blue dark:hover:text-tech-blue transition-colors duration-300"
           animate={{ 
             y: [0, 5, 0],
           }}
