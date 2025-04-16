@@ -1,4 +1,3 @@
-
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -44,7 +43,7 @@ const HeroSection = () => {
           >
             Hi, I'm <span className="block sm:inline">
               <Typewriter
-                words={['Meskat-UL Muntasir', 'a Dreamer', 'a Tinkerer', 'a Student']}
+                words={['Meskat-UL Muntasir', 'a Dreamer', 'a Thinker', 'a Student']}
                 loop={true}
                 cursor
                 cursorStyle="|"
