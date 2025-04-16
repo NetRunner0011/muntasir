@@ -98,23 +98,21 @@ const AboutSection = () => {
             <div className="space-y-6">
               <Card className="shadow-md hover:shadow-lg transition-shadow dark:bg-tech-dark/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="400">
                 <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    <div className="mr-4 bg-tech-blue/10 dark:bg-tech-blue/20 p-3 rounded-full">
-                      <GraduationCap className="text-tech-blue" size={24} />
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="h-16 w-16 rounded-full bg-tech-blue/10 dark:bg-tech-blue/20 p-3 flex items-center justify-center">
+                        <img
+                          src="/images/Rajshahi College.jpg"
+                          alt="Rajshahi College Logo"
+                          className="w-full h-full object-contain rounded-full"
+                        />
+                      </div>
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg">Rajshahi College</h4>
                       <p className="text-muted-foreground">Higher Secondary Education (Current)</p>
                       <p>Intermediate Student</p>
-                      
-                      <div className="mt-4">
-                        <img
-                          src="/images/Rajshahi College.jpg"
-                          alt="Rajshahi College"
-                          className="rounded-lg shadow-md w-full md:w-[400px] mx-auto object-cover h-48"
-                        />
-                        <p className="text-sm text-center mt-2 text-gray-600 dark:text-gray-300">Rajshahi College Campus</p>
-                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">2023 - Present</p>
                     </div>
                   </div>
                 </CardContent>
@@ -122,23 +120,21 @@ const AboutSection = () => {
               
               <Card className="shadow-md hover:shadow-lg transition-shadow dark:bg-tech-dark/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="500">
                 <CardContent className="p-6">
-                  <div className="flex flex-col md:flex-row md:items-start gap-6">
-                    <div className="mr-4 bg-tech-blue/10 dark:bg-tech-blue/20 p-3 rounded-full">
-                      <BookOpen className="text-tech-blue" size={24} />
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0">
+                      <div className="h-16 w-16 rounded-full bg-tech-blue/10 dark:bg-tech-blue/20 p-3 flex items-center justify-center">
+                        <img
+                          src="/images/Rajshahi Collegiate School.jpg"
+                          alt="Rajshahi Collegiate School Logo"
+                          className="w-full h-full object-contain rounded-full"
+                        />
+                      </div>
                     </div>
                     <div className="flex-1">
                       <h4 className="font-semibold text-lg">Rajshahi Collegiate School and College</h4>
                       <p className="text-muted-foreground">Secondary Education</p>
                       <p>Completed Secondary School Certificate</p>
-                      
-                      <div className="mt-4">
-                        <img
-                          src="/images/Rajshahi Collegiate School.jpg"
-                          alt="Rajshahi Collegiate School"
-                          className="rounded-lg shadow-md w-full md:w-[400px] mx-auto object-cover h-48"
-                        />
-                        <p className="text-sm text-center mt-2 text-gray-600 dark:text-gray-300">Rajshahi Collegiate School Campus</p>
-                      </div>
+                      <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">2021 - 2023</p>
                     </div>
                   </div>
                 </CardContent>
