@@ -70,12 +70,12 @@ const ProjectsSection = () => {
         >
           <motion.div variants={itemVariants}>
             <Card className="glass-card bg-gradient-to-br from-white/5 to-white/10 border-white/10 text-white overflow-hidden shadow-xl hover:shadow-tech-blue/20 transition-all duration-300 transform hover:-translate-y-2">
-              <div className="h-48 bg-tech-blue/5 flex items-center justify-center p-2">
-                <div className="flex space-x-2">
+              <div className="h-48 bg-tech-blue/5 p-4">
+                <div className="grid grid-cols-2 gap-4 h-full">
                   {project.images.map((image, index) => (
                     <motion.div
                       key={index}
-                      className="w-1/2"
+                      className="relative overflow-hidden rounded-lg shadow-lg"
                       whileHover={{ 
                         scale: 1.05,
                         boxShadow: "0 10px 25px -5px rgba(14, 165, 233, 0.3)"
@@ -85,7 +85,7 @@ const ProjectsSection = () => {
                       <img 
                         src={image} 
                         alt={`${project.title} - Image ${index + 1}`} 
-                        className="h-full object-cover rounded-md shadow-md"
+                        className="w-full h-full object-cover"
                       />
                     </motion.div>
                   ))}
@@ -98,7 +98,7 @@ const ProjectsSection = () => {
                     <Badge 
                       key={tagIndex} 
                       variant="secondary" 
-                      className="animate-fade-in bg-gradient-to-r from-tech-blue/20 to-tech-teal/20 border border-tech-blue/30 text-white" 
+                      className="animate-fade-in bg-gradient-to-r from-tech-blue/20 to-tech-teal/20 border border-tech-blue/30 text-white px-3 py-1 rounded-full shadow-[0_0_10px_rgba(14,165,233,0.3)] hover:shadow-[0_0_15px_rgba(14,165,233,0.5)] transition-all duration-300" 
                       style={{animationDelay: `${tagIndex * 0.1}s`}}
                     >
                       {tag}
@@ -107,14 +107,16 @@ const ProjectsSection = () => {
                 </div>
               </CardHeader>
               <CardContent className="pt-2">
-                <CardDescription className="text-base text-gray-300">{project.description}</CardDescription>
+                <CardDescription className="text-base text-gray-300">
+                  {project.description}
+                </CardDescription>
               </CardContent>
               <CardFooter className="flex gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex items-center gap-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 hover-scale"
+                    className="flex items-center gap-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 hover:shadow-[0_0_15px_rgba(14,165,233,0.3)] transition-all duration-300"
                     onClick={() => window.open(project.detailsLink, '_blank')}
                   >
                     <Code size={16} />

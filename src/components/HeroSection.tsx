@@ -1,4 +1,3 @@
-
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -106,13 +105,13 @@ const HeroSection = () => {
           data-aos-delay="300"
         >
           <motion.div 
-            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full gradient-border bg-gradient-to-br from-tech-blue/10 to-purple-500/10 backdrop-blur-md p-1 shadow-xl glow-shadow"
+            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-pink-500/30 backdrop-blur-xl p-1 shadow-xl glow-shadow relative"
             animate={{ 
               y: [0, -10, 0],
               boxShadow: [
-                "0 10px 15px -3px rgba(14, 165, 233, 0.2)",
-                "0 20px 25px -5px rgba(14, 165, 233, 0.3)",
-                "0 10px 15px -3px rgba(14, 165, 233, 0.2)"
+                "0 10px 25px -3px rgba(59, 130, 246, 0.5)",
+                "0 20px 35px -5px rgba(168, 85, 247, 0.4)",
+                "0 10px 25px -3px rgba(59, 130, 246, 0.5)"
               ]
             }}
             transition={{
@@ -122,10 +121,11 @@ const HeroSection = () => {
               ease: "easeInOut"
             }}
           >
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-move rounded-full"></div>
             <img 
               src="/lovable-uploads/6bb7e6ad-29df-4fd5-86b5-1124f07d1ad1.png" 
               alt="Meskat-UL Muntasir" 
-              className="w-full h-full object-cover rounded-full"
+              className="w-full h-full object-cover rounded-full relative z-10"
             />
           </motion.div>
         </motion.div>

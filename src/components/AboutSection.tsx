@@ -1,5 +1,4 @@
-
-import { Copy, Terminal, Home } from 'lucide-react';
+import { Terminal, Home } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
@@ -38,9 +37,7 @@ const AboutSection = () => {
         
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
           <motion.div 
-            className="text-lg space-y-6" 
-            data-aos="fade-up" 
-            data-aos-delay="100"
+            className="text-lg space-y-6"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
@@ -74,7 +71,11 @@ const AboutSection = () => {
                 Rajshahi Collegiate School and College
               </a>.
             </p>
-            
+
+            <p className="leading-relaxed text-gray-800 dark:text-gray-300">
+              Outside academics, I keep a low profile. I study quietly, build things when I can, and enjoy thinking deeply about how the world works—both in formulas and in silence. Besides I strengthen brain muscles by reading books and chill playing video games.
+            </p>
+
             <motion.div
               whileHover={{ scale: 1.02 }}
               transition={{ type: "spring", stiffness: 400 }}
