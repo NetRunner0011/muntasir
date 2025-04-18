@@ -30,7 +30,7 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen pt-24 flex items-center bg-circuit-pattern bg-tech-light dark:bg-tech-dark dark:bg-opacity-90">
+    <section id="home" className="relative min-h-screen pt-48 flex items-center bg-gradient-to-br from-tech-light via-tech-light/95 to-tech-light/90 dark:from-tech-dark dark:via-tech-dark/95 dark:to-tech-dark/90">
       <div className="absolute inset-0 bg-gradient-to-r from-tech-light/90 to-tech-light/70 dark:from-tech-dark/90 dark:to-tech-dark/70"></div>
       <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-8 items-center">
         <div className="max-w-3xl">

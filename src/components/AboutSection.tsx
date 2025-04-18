@@ -1,9 +1,7 @@
-
-import { GraduationCap, Home, BookOpen, Terminal, Copy } from 'lucide-react';
+import { Copy } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
-import { useState, useEffect } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import { useToast } from '@/hooks/use-toast';
 
@@ -21,7 +19,7 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 bg-white dark:bg-tech-dark dark:text-tech-light">
+    <section id="about" className="py-20 bg-gradient-to-br from-white via-gray-50 to-gray-100 dark:from-tech-dark dark:via-gray-900 dark:to-gray-800">
       <div className="container mx-auto px-4">
         <h2 className="section-title" data-aos="fade-right">About Me</h2>
         
@@ -96,13 +94,13 @@ const AboutSection = () => {
           <div data-aos="fade-up" data-aos-delay="300">
             <h3 className="text-2xl font-semibold mb-6">Education & Background</h3>
             <div className="space-y-6">
-              <Card className="shadow-md hover:shadow-lg transition-shadow dark:bg-tech-dark/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="400">
+              <Card className="shadow-md hover:shadow-lg transition-shadow bg-gradient-to-r from-white to-gray-50 dark:from-tech-dark/50 dark:to-gray-900/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="400">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
                       <div className="h-16 w-16 rounded-full bg-tech-blue/10 dark:bg-tech-blue/20 p-3 flex items-center justify-center">
                         <img
-                          src="/lovable-uploads/6955a290-1a06-40c2-8599-9bd484f9ad84.png"
+                          src="/lovable-uploads/452acb1e-eed4-4584-97b6-b763130ab321.png"
                           alt="Rajshahi College Logo"
                           className="w-full h-full object-contain rounded-full"
                         />
@@ -118,7 +116,7 @@ const AboutSection = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow dark:bg-tech-dark/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="500">
+              <Card className="shadow-md hover:shadow-lg transition-shadow bg-gradient-to-r from-white to-gray-50 dark:from-tech-dark/50 dark:to-gray-900/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="500">
                 <CardContent className="p-6">
                   <div className="flex items-start gap-4">
                     <div className="flex-shrink-0">
@@ -140,7 +138,7 @@ const AboutSection = () => {
                 </CardContent>
               </Card>
               
-              <Card className="shadow-md hover:shadow-lg transition-shadow dark:bg-tech-dark/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="600">
+              <Card className="shadow-md hover:shadow-lg transition-shadow bg-gradient-to-r from-white to-gray-50 dark:from-tech-dark/50 dark:to-gray-900/50 dark:border-tech-blue/20" data-aos="fade-up" data-aos-delay="600">
                 <CardContent className="p-6">
                   <div className="flex items-start">
                     <div className="mr-4 bg-tech-blue/10 dark:bg-tech-blue/20 p-3 rounded-full">
