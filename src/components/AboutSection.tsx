@@ -1,4 +1,5 @@
-import { Copy } from 'lucide-react';
+
+import { Copy, Terminal, Home } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
