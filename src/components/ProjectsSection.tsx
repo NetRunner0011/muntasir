@@ -41,16 +41,24 @@ const ProjectsSection = () => {
   };
 
   return (
-    <section id="projects" className="py-20 bg-muted relative overflow-hidden">
-      <div className="container mx-auto px-4">
+    <section id="projects" className="py-20 relative overflow-hidden">
+      {/* Gradient background with cyberpunk feel */}
+      <div className="absolute inset-0 bg-gradient-to-br from-gray-900 via-purple-900/50 to-indigo-950"></div>
+      <div className="absolute inset-0 bg-circuit-pattern opacity-5"></div>
+      
+      {/* Floating elements in background */}
+      <div className="absolute top-20 left-10 w-40 h-40 rounded-full bg-cyberpunk-diag opacity-20 blur-3xl"></div>
+      <div className="absolute bottom-20 right-10 w-60 h-60 rounded-full bg-radial-glow opacity-10 blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <motion.h2 
-          className="section-title"
+          className="section-title text-white"
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
         >
-          ECA
+          <span className="gradient-text">ECA</span>
         </motion.h2>
         
         <motion.div 
@@ -61,42 +69,52 @@ const ProjectsSection = () => {
           viewport={{ once: true }}
         >
           <motion.div variants={itemVariants}>
-            <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
-              <div className="h-48 bg-tech-blue/10 flex items-center justify-center p-2">
+            <Card className="glass-card bg-gradient-to-br from-white/5 to-white/10 border-white/10 text-white overflow-hidden shadow-xl hover:shadow-tech-blue/20 transition-all duration-300 transform hover:-translate-y-2">
+              <div className="h-48 bg-tech-blue/5 flex items-center justify-center p-2">
                 <div className="flex space-x-2">
                   {project.images.map((image, index) => (
                     <motion.div
                       key={index}
                       className="w-1/2"
-                      whileHover={{ scale: 1.05 }}
+                      whileHover={{ 
+                        scale: 1.05,
+                        boxShadow: "0 10px 25px -5px rgba(14, 165, 233, 0.3)"
+                      }}
                       transition={{ type: "spring", stiffness: 300 }}
                     >
                       <img 
                         src={image} 
                         alt={`${project.title} - Image ${index + 1}`} 
-                        className="h-full object-cover rounded-md shadow-sm"
+                        className="h-full object-cover rounded-md shadow-md"
                       />
                     </motion.div>
                   ))}
                 </div>
               </div>
               <CardHeader className="pb-2 pt-4">
-                <CardTitle className="text-xl leading-tight">{project.title}</CardTitle>
+                <CardTitle className="text-xl leading-tight gradient-text">{project.title}</CardTitle>
                 <div className="flex flex-wrap gap-2 mt-2">
                   {project.tags.map((tag, tagIndex) => (
-                    <Badge key={tagIndex} variant="secondary" className="animate-fade-in" style={{animationDelay: `${tagIndex * 0.1}s`}}>{tag}</Badge>
+                    <Badge 
+                      key={tagIndex} 
+                      variant="secondary" 
+                      className="animate-fade-in bg-gradient-to-r from-tech-blue/20 to-tech-teal/20 border border-tech-blue/30 text-white" 
+                      style={{animationDelay: `${tagIndex * 0.1}s`}}
+                    >
+                      {tag}
+                    </Badge>
                   ))}
                 </div>
               </CardHeader>
               <CardContent className="pt-2">
-                <CardDescription className="text-base">{project.description}</CardDescription>
+                <CardDescription className="text-base text-gray-300">{project.description}</CardDescription>
               </CardContent>
               <CardFooter className="flex gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     variant="outline"
                     size="sm"
-                    className="flex items-center gap-2 border-tech-dark text-tech-dark hover:bg-tech-dark/10"
+                    className="flex items-center gap-2 border-tech-blue text-tech-blue hover:bg-tech-blue/10 hover-scale"
                     onClick={() => window.open(project.detailsLink, '_blank')}
                   >
                     <Code size={16} />

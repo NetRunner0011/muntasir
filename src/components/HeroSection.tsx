@@ -30,12 +30,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen pt-48 flex items-center bg-gradient-to-br from-tech-light via-tech-light/95 to-tech-light/90 dark:from-tech-dark dark:via-tech-dark/95 dark:to-tech-dark/90">
-      <div className="absolute inset-0 bg-gradient-to-r from-tech-light/90 to-tech-light/70 dark:from-tech-dark/90 dark:to-tech-dark/70"></div>
-      <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-8 items-center">
+    <section id="home" className="relative min-h-screen pt-60 flex items-center bg-gradient-to-br from-tech-dark via-indigo-900 to-tech-dark overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute inset-0 bg-circuit-pattern opacity-20"></div>
+        <div className="absolute -inset-[100px] bg-radial-glow opacity-10 animate-pulse"></div>
+      </div>
+      
+      {/* Gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-to-r from-tech-dark/90 to-tech-dark/80 backdrop-blur-sm"></div>
+      
+      <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
         <div className="max-w-3xl">
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 bg-gradient-to-r from-tech-dark to-tech-blue dark:from-tech-light dark:to-tech-blue bg-clip-text text-transparent"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text tracking-tight"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
@@ -56,7 +64,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-            className="text-xl md:text-2xl text-tech-dark dark:text-tech-light mb-8"
+            className="text-xl md:text-2xl text-white/90 mb-8"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
@@ -79,7 +87,7 @@ const HeroSection = () => {
               href="https://www.facebook.com/meskatulmuntasir" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-tech-blue text-white px-4 py-2 rounded hover:bg-tech-blue/80 transition-all"
+              className="inline-flex items-center gap-2 bg-gradient-to-r from-tech-blue to-cyan-600 text-white px-6 py-2.5 rounded-xl hover-scale shadow-lg hover:shadow-tech-blue/30 transition-all"
               whileHover={{ scale: 1.05, boxShadow: "0 10px 15px -3px rgba(14, 165, 233, 0.3)" }}
               whileTap={{ scale: 0.95 }}
             >
@@ -98,7 +106,7 @@ const HeroSection = () => {
           data-aos-delay="300"
         >
           <motion.div 
-            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full border-4 border-tech-blue dark:border-tech-blue/80 shadow-xl"
+            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full gradient-border bg-gradient-to-br from-tech-blue/10 to-purple-500/10 backdrop-blur-md p-1 shadow-xl glow-shadow"
             animate={{ 
               y: [0, -10, 0],
               boxShadow: [
@@ -117,7 +125,7 @@ const HeroSection = () => {
             <img 
               src="/lovable-uploads/6bb7e6ad-29df-4fd5-86b5-1124f07d1ad1.png" 
               alt="Meskat-UL Muntasir" 
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover rounded-full"
             />
           </motion.div>
         </motion.div>
@@ -132,7 +140,7 @@ const HeroSection = () => {
       >
         <motion.a 
           href="#about" 
-          className="flex flex-col items-center text-tech-dark dark:text-tech-light hover:text-tech-blue dark:hover:text-tech-blue transition-colors duration-300"
+          className="flex flex-col items-center text-white/80 hover:text-tech-blue transition-colors duration-300"
           animate={{ 
             y: [0, 5, 0],
           }}

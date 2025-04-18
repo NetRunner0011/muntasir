@@ -1,5 +1,5 @@
 
-import { Facebook, Linkedin, Twitter, Instagram, Heart } from 'lucide-react';
+import { Facebook, Heart } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
@@ -20,8 +20,16 @@ const Footer = () => {
   }, []);
   
   return (
-    <footer className="bg-tech-dark text-white py-12 dark:bg-black/80">
-      <div className="container mx-auto px-4">
+    <footer className="relative py-16 overflow-hidden">
+      {/* Gradient background */}
+      <div className="absolute inset-0 bg-gradient-to-b from-tech-dark via-indigo-950 to-black"></div>
+      
+      {/* Circuit pattern and glow */}
+      <div className="absolute inset-0 bg-circuit-pattern opacity-10"></div>
+      <div className="absolute left-1/4 bottom-0 w-96 h-96 bg-radial-glow opacity-5 blur-3xl"></div>
+      <div className="absolute right-1/4 bottom-1/4 w-64 h-64 bg-cyberpunk-diag opacity-5 blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-center">
           <motion.div 
             className="mb-6 md:mb-0"
@@ -30,7 +38,7 @@ const Footer = () => {
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl font-bold">Meskat-UL Muntasir</h3>
+            <h3 className="text-xl font-bold gradient-text">Meskat-UL Muntasir</h3>
             <p className="mt-2 text-gray-300">Student at Rajshahi College</p>
           </motion.div>
           
@@ -45,11 +53,15 @@ const Footer = () => {
               href="https://www.facebook.com/meskatulmuntasir" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="bg-white/10 p-2 rounded-full hover:bg-tech-blue/80 transition-colors duration-300"
-              whileHover={{ scale: 1.1, backgroundColor: "rgba(14, 165, 233, 0.8)" }}
+              className="glass-card p-2 rounded-full hover:bg-tech-blue/50 transition-all duration-300 glow-shadow"
+              whileHover={{ 
+                scale: 1.1, 
+                backgroundColor: "rgba(14, 165, 233, 0.5)",
+                boxShadow: "0 0 20px rgba(14, 165, 233, 0.4)"
+              }}
               whileTap={{ scale: 0.95 }}
             >
-              <Facebook size={20} />
+              <Facebook size={20} className="text-white" />
             </motion.a>
           </motion.div>
         </div>
@@ -63,13 +75,13 @@ const Footer = () => {
         >
           <p>© {currentYear} Meskat-UL Muntasir. All rights reserved.</p>
           <p className="mt-2 flex items-center justify-center gap-1">
-            Made with <Heart size={14} className="text-red-500 fill-current" /> by Muntasir
+            Made with <Heart size={14} className="text-red-500 fill-current animate-pulse" /> by Muntasir
           </p>
           
           <div className="mt-6 space-y-3">
             <p className="text-sm text-gray-500">
               Total Visitors Since 15 April 2025: 
-              <span id="visitor-count" className="ml-1 font-mono tracking-widest bg-gray-800/50 px-2 py-0.5 rounded">
+              <span id="visitor-count" className="ml-1 font-mono tracking-widest glass-card px-2 py-0.5 rounded">
                 {visitorCount}
               </span>
             </p>

@@ -94,4 +94,24 @@
   .highlight {
     @apply text-tech-blue font-semibold;
   }
+
+  .glass-card {
+    @apply backdrop-blur-md bg-white/10 dark:bg-black/30 border border-white/20 dark:border-white/10 shadow-lg rounded-xl;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-tech-blue to-tech-teal bg-clip-text text-transparent;
+  }
+  
+  .gradient-border {
+    @apply border-2 border-transparent bg-gradient-to-r from-tech-blue to-tech-teal bg-clip-border;
+  }
+  
+  .hover-scale {
+    @apply transition-all duration-300 hover:scale-105;
+  }
+  
+  .glow-shadow {
+    @apply shadow-[0_0_15px_rgba(14,165,233,0.3)];
+  }
 }

@@ -34,29 +34,39 @@ const Header = () => {
   ];
 
   return (
-    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-background/95 dark:bg-background/80 shadow-md py-2 backdrop-blur-sm' : 'bg-transparent py-4'}`}>
+    <header className={`fixed top-0 left-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'glass-card py-2 backdrop-blur-lg' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-4 flex items-center justify-between">
         <div className="flex items-center gap-2">
           <a href="#home" className="text-foreground font-bold text-xl flex items-center gap-2">
             <div className="flex items-center gap-2">
-              <motion.img 
-                src="/lovable-uploads/54342097-f553-4cf4-b6fd-0621a6df9357.png" 
-                alt="Rajshahi College Logo" 
-                className="h-8 w-8 object-contain"
+              <motion.div
+                className="h-8 w-8 rounded-full overflow-hidden gradient-border"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
-              />
-              <motion.img 
-                src="/lovable-uploads/c2515e9d-64db-4030-9dec-51bc32f39536.png" 
-                alt="Rajshahi Collegiate School Logo" 
-                className="h-8 w-8 object-contain"
+                whileHover={{ scale: 1.1 }}
+              >
+                <img 
+                  src="/lovable-uploads/54342097-f553-4cf4-b6fd-0621a6df9357.png" 
+                  alt="Rajshahi College Logo" 
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
+              <motion.div
+                className="h-8 w-8 rounded-full overflow-hidden gradient-border"
                 initial={{ opacity: 0, y: -10 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.4 }}
-              />
+                whileHover={{ scale: 1.1 }}
+              >
+                <img 
+                  src="/lovable-uploads/c2515e9d-64db-4030-9dec-51bc32f39536.png" 
+                  alt="Rajshahi Collegiate School Logo" 
+                  className="h-full w-full object-contain"
+                />
+              </motion.div>
             </div>
-            <span>Meskat<span className="text-tech-blue">-UL</span></span>
+            <span className="gradient-text">Meskat<span className="text-tech-blue">-UL</span></span>
           </a>
         </div>
 
@@ -67,22 +77,24 @@ const Header = () => {
               <li key={link.name}>
                 <a 
                   href={link.href} 
-                  className="text-foreground hover:text-tech-blue transition-colors duration-300"
+                  className="text-foreground hover:text-tech-blue relative overflow-hidden group transition-colors duration-300"
                 >
                   {link.name}
+                  <span className="absolute bottom-0 left-0 w-full h-0.5 bg-tech-blue transform scale-x-0 group-hover:scale-x-100 transition-transform duration-300"></span>
                 </a>
               </li>
             ))}
           </ul>
           <div className="flex items-center gap-4">
-            <a 
+            <motion.a 
               href="https://www.facebook.com/meskatulmuntasir" 
               target="_blank"
               rel="noopener noreferrer" 
               className="flex items-center gap-2 bg-tech-blue/10 dark:bg-tech-blue/20 p-2 rounded-full text-tech-blue hover:bg-tech-blue/20 dark:hover:bg-tech-blue/30 transition-colors"
+              whileHover={{ scale: 1.1, boxShadow: "0 0 15px rgba(14, 165, 233, 0.3)" }}
             >
               <Facebook size={20} />
-            </a>
+            </motion.a>
             <ThemeToggle />
           </div>
         </nav>
@@ -90,7 +102,7 @@ const Header = () => {
         {/* Mobile Menu Button */}
         <div className="md:hidden flex items-center gap-3">
           <ThemeToggle />
-          <button className="text-foreground" onClick={toggleMenu}>
+          <button className="text-foreground glass-card p-2" onClick={toggleMenu}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -98,11 +110,22 @@ const Header = () => {
 
       {/* Mobile Menu */}
       {isMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-background dark:bg-background/90 backdrop-blur-sm shadow-lg py-4 animate-fade-in">
+        <motion.div 
+          className="md:hidden absolute top-full left-0 w-full glass-card shadow-lg py-4"
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -20 }}
+          transition={{ duration: 0.3 }}
+        >
           <nav className="container mx-auto px-4">
             <ul className="flex flex-col gap-4">
-              {navLinks.map((link) => (
-                <li key={link.name}>
+              {navLinks.map((link, index) => (
+                <motion.li 
+                  key={link.name}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1 }}
+                >
                   <a 
                     href={link.href} 
                     className="block py-2 text-foreground hover:text-tech-blue transition-colors duration-300"
@@ -110,23 +133,27 @@ const Header = () => {
                   >
                     {link.name}
                   </a>
-                </li>
+                </motion.li>
               ))}
-              <li>
+              <motion.li
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ delay: navLinks.length * 0.1 }}
+              >
                 <a 
                   href="https://www.facebook.com/meskatulmuntasir" 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 py-2 text-tech-blue"
+                  className="flex items-center gap-2 py-2 gradient-text"
                   onClick={toggleMenu}
                 >
                   <Facebook size={20} />
                   <span>Facebook</span>
                 </a>
-              </li>
+              </motion.li>
             </ul>
           </nav>
-        </div>
+        </motion.div>
       )}
     </header>
   );
