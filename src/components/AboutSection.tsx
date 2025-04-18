@@ -9,7 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 
 const AboutSection = () => {
   const { toast } = useToast();
-  const terminalText = "> whoami\n> Meskat Ul Muntasir\n> passion: Engineering, Science, Technology\n> location: Rajshahi, Bangladesh\n> education: Intermediate Student\n> interests: Reading, Video Games, Circuit Design";
+  const terminalText = "> whoami\n> Meskat Ul Muntasir\n> education: Intermediate Student at Rajshahi College\n> education: Secondary School Certificate from Rajshahi Collegiate School and College";
   
   const copyToClipboard = () => {
     navigator.clipboard.writeText(terminalText);
@@ -70,7 +70,7 @@ const AboutSection = () => {
                 <pre className="font-mono text-sm whitespace-pre-wrap break-all">
                   <Typewriter
                     words={[
-                      "> whoami\n> Meskat Ul Muntasir\n> passion: Engineering, Science, Technology\n> location: Rajshahi, Bangladesh\n> education: Intermediate Student\n> interests: Reading, Video Games, Circuit Design"
+                      "> whoami\n> Meskat Ul Muntasir\n> education: Intermediate Student at Rajshahi College\n> education: Secondary School Certificate from Rajshahi Collegiate School and College"
                     ]}
                     loop={1}
                     cursor
@@ -102,7 +102,7 @@ const AboutSection = () => {
                     <div className="flex-shrink-0">
                       <div className="h-16 w-16 rounded-full bg-tech-blue/10 dark:bg-tech-blue/20 p-3 flex items-center justify-center">
                         <img
-                          src="/images/Rajshahi College.jpg"
+                          src="/lovable-uploads/6955a290-1a06-40c2-8599-9bd484f9ad84.png"
                           alt="Rajshahi College Logo"
                           className="w-full h-full object-contain rounded-full"
                         />
@@ -124,7 +124,7 @@ const AboutSection = () => {
                     <div className="flex-shrink-0">
                       <div className="h-16 w-16 rounded-full bg-tech-blue/10 dark:bg-tech-blue/20 p-3 flex items-center justify-center">
                         <img
-                          src="/images/Rajshahi Collegiate School.jpg"
+                          src="/lovable-uploads/c2515e9d-64db-4030-9dec-51bc32f39536.png"
                           alt="Rajshahi Collegiate School Logo"
                           className="w-full h-full object-contain rounded-full"
                         />
