@@ -31,17 +31,20 @@ const HeroSection = () => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen pt-60 flex items-center bg-gradient-to-br from-tech-dark via-indigo-900 to-tech-dark overflow-hidden">
+    <section 
+      id="home" 
+      className="relative min-h-screen pt-60 flex items-center bg-gradient-to-br from-white via-blue-50 to-white dark:from-tech-dark dark:via-indigo-900 dark:to-tech-dark overflow-hidden"
+    >
       {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute inset-0 bg-circuit-pattern opacity-20"></div>
-        <div className="absolute -inset-[100px] bg-radial-glow opacity-10 animate-pulse"></div>
+        <div className="absolute inset-0 bg-circuit-pattern opacity-10 dark:opacity-20"></div>
+        <div className="absolute -inset-[100px] bg-radial-glow opacity-5 dark:opacity-10 animate-pulse"></div>
       </div>
       
       {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-tech-dark/90 to-tech-dark/80 backdrop-blur-sm"></div>
+      <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/80 dark:from-tech-dark/90 dark:to-tech-dark/80 backdrop-blur-sm"></div>
       
-      <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
+      <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center pb-20">
         <div className="max-w-3xl order-2 md:order-1 mt-6 md:mt-0">
           <motion.h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text tracking-tight relative z-10"
