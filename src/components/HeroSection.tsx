@@ -1,3 +1,4 @@
+
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -40,9 +41,9 @@ const HeroSection = () => {
       <div className="absolute inset-0 bg-gradient-to-r from-tech-dark/90 to-tech-dark/80 backdrop-blur-sm"></div>
       
       <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl order-2 md:order-1 mt-6 md:mt-0">
           <motion.h1 
-            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text tracking-tight"
+            className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text tracking-tight relative z-10"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
@@ -97,7 +98,7 @@ const HeroSection = () => {
         </div>
         
         <motion.div 
-          className="flex justify-center md:justify-end"
+          className="flex justify-center md:justify-end order-1 md:order-2 -mb-12 md:mb-0"
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.6, type: "spring", stiffness: 100 }}
@@ -105,13 +106,13 @@ const HeroSection = () => {
           data-aos-delay="300"
         >
           <motion.div 
-            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full bg-gradient-to-br from-blue-500/30 via-purple-500/20 to-pink-500/30 backdrop-blur-xl p-1 shadow-xl glow-shadow relative"
+            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full p-1 shadow-lg relative"
             animate={{ 
               y: [0, -10, 0],
               boxShadow: [
-                "0 10px 25px -3px rgba(59, 130, 246, 0.5)",
-                "0 20px 35px -5px rgba(168, 85, 247, 0.4)",
-                "0 10px 25px -3px rgba(59, 130, 246, 0.5)"
+                "0 10px 25px -3px rgba(59, 130, 246, 0.2)",
+                "0 20px 35px -5px rgba(168, 85, 247, 0.15)",
+                "0 10px 25px -3px rgba(59, 130, 246, 0.2)"
               ]
             }}
             transition={{
@@ -121,7 +122,6 @@ const HeroSection = () => {
               ease: "easeInOut"
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20 animate-gradient-move rounded-full"></div>
             <img 
               src="/lovable-uploads/6bb7e6ad-29df-4fd5-86b5-1124f07d1ad1.png" 
               alt="Meskat-UL Muntasir" 
@@ -132,15 +132,15 @@ const HeroSection = () => {
       </div>
       
       <motion.div 
-        className="absolute bottom-10 left-1/2"
+        className="absolute bottom-4 left-1/2 z-20"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5, duration: 0.5 }}
-        style={{ x: "-50%" }}
+        style={{ transform: 'translateX(-50%)' }}
       >
         <motion.a 
           href="#about" 
-          className="flex flex-col items-center text-white/80 hover:text-tech-blue transition-colors duration-300"
+          className="flex flex-col items-center text-white/80 hover:text-tech-blue transition-colors duration-300 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
           animate={{ 
             y: [0, 5, 0],
           }}
@@ -150,7 +150,7 @@ const HeroSection = () => {
             ease: "easeInOut"
           }}
         >
-          <span className="mb-2 text-sm">Scroll Down</span>
+          <span className="mb-2 text-sm font-medium">Scroll Down</span>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M12 5v14M5 12l7 7 7-7"/>
           </svg>
