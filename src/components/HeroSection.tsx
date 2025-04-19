@@ -1,3 +1,4 @@
+
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -68,7 +69,7 @@ const HeroSection = () => {
           </motion.h1>
           
           <motion.div
-            className="text-xl md:text-2xl text-white/90 mb-8"
+            className="text-xl md:text-2xl text-gray-700 dark:text-white/90 mb-8"
             initial="hidden"
             animate="visible"
             variants={fadeInUpVariants}
@@ -110,7 +111,7 @@ const HeroSection = () => {
           data-aos-delay="300"
         >
           <motion.div 
-            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full p-1 shadow-lg relative"
+            className="w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-full p-1 shadow-lg relative border border-blue-200 dark:border-blue-800"
             animate={{ 
               y: [0, -10, 0],
               boxShadow: [
