@@ -1,4 +1,3 @@
-
 import { Facebook, Heart } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -7,16 +6,16 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [visitorCount, setVisitorCount] = useState('...');
 
-  // Fetch visitor count on component mount
+  // New implementation using localStorage for visitor count
   useEffect(() => {
-    fetch('https://api.countapi.xyz/update/muntasir-portfolio/visits/?amount=1')
-      .then(res => res.json())
-      .then(res => {
-        setVisitorCount(res.value.toLocaleString());
-      })
-      .catch(() => {
-        setVisitorCount('--');
-      });
+    const getVisitorCount = () => {
+      const count = localStorage.getItem('visitorCount') || '0';
+      const newCount = parseInt(count) + 1;
+      localStorage.setItem('visitorCount', newCount.toString());
+      setVisitorCount(newCount.toLocaleString());
+    };
+    
+    getVisitorCount();
   }, []);
   
   return (
@@ -53,10 +52,9 @@ const Footer = () => {
               href="https://www.facebook.com/meskatulmuntasir" 
               target="_blank" 
               rel="noopener noreferrer" 
-              className="glass-card p-2 rounded-full hover:bg-tech-blue/50 transition-all duration-300 glow-shadow"
+              className="glass-card p-2 rounded-full bg-gradient-to-r from-tech-blue to-cyan-600 hover:from-cyan-600 hover:to-tech-blue transition-all duration-300 glow-shadow"
               whileHover={{ 
-                scale: 1.1, 
-                backgroundColor: "rgba(14, 165, 233, 0.5)",
+                scale: 1.1,
                 boxShadow: "0 0 20px rgba(14, 165, 233, 0.4)"
               }}
               whileTap={{ scale: 0.95 }}
@@ -80,8 +78,8 @@ const Footer = () => {
           
           <div className="mt-6 space-y-3">
             <p className="text-sm text-gray-500">
-              Total Visitors Since 15 April 2025: 
-              <span id="visitor-count" className="ml-1 font-mono tracking-widest glass-card px-2 py-0.5 rounded">
+              Total Visitors: 
+              <span className="ml-1 font-mono tracking-widest bg-gradient-to-r from-tech-blue/20 to-cyan-600/20 px-2 py-0.5 rounded glow-shadow">
                 {visitorCount}
               </span>
             </p>
