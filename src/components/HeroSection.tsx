@@ -1,11 +1,12 @@
-
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 import { Typewriter } from 'react-simple-typewriter';
+import { useIsMobile } from '@/hooks/use-mobile';
 
 const HeroSection = () => {
   const [isVisible, setIsVisible] = useState(false);
+  const isMobile = useIsMobile();
 
   useEffect(() => {
     // Set visible after component mounts for animation
@@ -130,32 +131,6 @@ const HeroSection = () => {
           </motion.div>
         </motion.div>
       </div>
-      
-      <motion.div 
-        className="absolute bottom-4 left-1/2 z-20"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5, duration: 0.5 }}
-        style={{ transform: 'translateX(-50%)' }}
-      >
-        <motion.a 
-          href="#about" 
-          className="flex flex-col items-center text-white/80 hover:text-tech-blue transition-colors duration-300 bg-black/20 backdrop-blur-sm px-4 py-2 rounded-full"
-          animate={{ 
-            y: [0, 5, 0],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        >
-          <span className="mb-2 text-sm font-medium">Scroll Down</span>
-          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M12 5v14M5 12l7 7 7-7"/>
-          </svg>
-        </motion.a>
-      </motion.div>
     </section>
   );
 };
