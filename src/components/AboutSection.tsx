@@ -1,4 +1,6 @@
-import { Terminal, Home } from 'lucide-react';
+
+import React from 'react';
+import { Terminal, Home, Copy } from 'lucide-react'; // Add Copy to the existing import
 import { Card, CardContent } from './ui/card';
 import { Button } from './ui/button';
 import { motion } from 'framer-motion';
