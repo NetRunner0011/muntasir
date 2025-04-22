@@ -1,4 +1,3 @@
-
 import { Facebook } from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
@@ -34,11 +33,8 @@ const HeroSection = () => {
       id="home" 
       className="relative min-h-screen pt-60 flex items-center bg-gradient-to-br from-white via-blue-50 to-white dark:from-tech-dark dark:via-indigo-900 dark:to-tech-dark overflow-hidden"
     >
-      {/* Animated background elements */}
       <div className="absolute inset-0 overflow-hidden">
-        {/* Animated circuit pattern */}
         <div className="absolute inset-0 bg-circuit-pattern opacity-10 dark:opacity-20"></div>
-        {/* Animating glow */}
         <motion.div
           className="absolute -inset-[100px] pointer-events-none z-0"
           initial={{ opacity: 0.1, scale: 0.98 }}
@@ -56,11 +52,9 @@ const HeroSection = () => {
         />
       </div>
       
-      {/* Slight Glass overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-white/90 to-white/80 dark:from-tech-dark/90 dark:to-tech-dark/80 backdrop-blur-sm"></div>
       
       <div className="container mx-auto px-4 z-10 grid md:grid-cols-2 gap-12 items-center pb-20">
-        {/* Text Column */}
         <div className="max-w-3xl order-2 md:order-1 mt-6 md:mt-0">
           <motion.h1 
             className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 gradient-text tracking-tight relative z-10"
@@ -122,7 +116,6 @@ const HeroSection = () => {
           </motion.div>
         </div>
         
-        {/* Dramatic Profile Pic */}
         <motion.div 
           className="flex justify-center md:justify-end order-1 md:order-2 -mb-12 md:mb-0"
           initial={{ opacity: 0, scale: 0.9 }}
@@ -154,7 +147,6 @@ const HeroSection = () => {
             }}
             style={{ zIndex: 2 }}
           >
-            {/* Dramatic Animated Glow Border */}
             <motion.div
               className="absolute inset-0 rounded-full border-8 border-tech-blue dark:border-cyan-400 pointer-events-none z-10"
               style={{
@@ -174,7 +166,6 @@ const HeroSection = () => {
                 repeatType: "mirror"
               }}
             />
-            {/* Glowing radial inner effect */}
             <motion.div
               className="absolute inset-2 rounded-full z-10 pointer-events-none"
               style={{
@@ -190,13 +181,11 @@ const HeroSection = () => {
                 repeatType: "mirror"
               }}
             />
-            {/* Profile */}
             <img 
               src="/lovable-uploads/6bb7e6ad-29df-4fd5-86b5-1124f07d1ad1.png" 
               alt="Meskat-UL Muntasir" 
               className="w-full h-full object-cover rounded-full relative z-20 shadow-xl"
             />
-            {/* Floating accent shape */}
             <motion.div
               className="absolute -top-6 right-10 w-16 h-16 bg-gradient-to-br from-cyan-400/30 to-indigo-400/10 rounded-full blur-2xl z-0"
               animate={{
@@ -206,29 +195,6 @@ const HeroSection = () => {
               }}
               transition={{ duration: 7, repeat: Infinity }}
             />
-            {/* Floating triangle */}
-            <motion.div
-              className="absolute left-0 bottom-4 w-12 h-12"
-              animate={{
-                y: [0, 12, -8, 0],
-                opacity: [0.5, 1, 0.5]
-              }}
-              transition={{ duration: 4.7, repeat: Infinity }}
-            >
-              <svg width="48" height="48" viewBox="0 0 100 100" fill="none">
-                <polygon
-                  points="50,15 90,85 10,85"
-                  fill="url(#paint0_linear)"
-                  opacity="0.6"
-                />
-                <defs>
-                  <linearGradient id="paint0_linear" x1="0" y1="0" x2="100" y2="100" gradientUnits="userSpaceOnUse">
-                    <stop stopColor="#0ea5e9" />
-                    <stop offset="1" stopColor="#a5b4fc" />
-                  </linearGradient>
-                </defs>
-              </svg>
-            </motion.div>
           </motion.div>
         </motion.div>
       </div>
