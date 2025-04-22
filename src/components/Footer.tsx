@@ -1,22 +1,9 @@
+
 import { Facebook, Heart } from 'lucide-react';
-import { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-  const [visitorCount, setVisitorCount] = useState('...');
-
-  // New implementation using localStorage for visitor count
-  useEffect(() => {
-    const getVisitorCount = () => {
-      const count = localStorage.getItem('visitorCount') || '0';
-      const newCount = parseInt(count) + 1;
-      localStorage.setItem('visitorCount', newCount.toString());
-      setVisitorCount(newCount.toLocaleString());
-    };
-    
-    getVisitorCount();
-  }, []);
   
   return (
     <footer className="relative py-16 overflow-hidden">
@@ -76,14 +63,7 @@ const Footer = () => {
             Made with <Heart size={14} className="text-red-500 fill-current animate-pulse" /> by Muntasir
           </p>
           
-          <div className="mt-6 space-y-3">
-            <p className="text-sm text-gray-500">
-              Total Visitors: 
-              <span className="ml-1 font-mono tracking-widest bg-gradient-to-r from-tech-blue/20 to-cyan-600/20 px-2 py-0.5 rounded glow-shadow">
-                {visitorCount}
-              </span>
-            </p>
-            
+          <div className="mt-6">
             <p className="text-xs text-gray-600 mt-4">
               Website built on: 15 April 2025
             </p>
